@@ -16,9 +16,9 @@ function Questionaire() {
         .prompt([
         {
             type: "list",
-            name: "role",
-            message:"What is the employee's position?",
-            choices: ["Manager", "Engineer", "Intern"]
+            name: "position",
+            message: "What is the employee's position?",
+            choices:["Manager", "Engineer", "Intern"]
         },
         {
             type: "text",
@@ -34,9 +34,26 @@ function Questionaire() {
             type: "text",
             name: "email",
             message: "What is the employee's email?"
-        }])
-        .then(({name, id, email, role}) => {
-            if (role === "Manager") {
+        },
+        {
+            type: "confirm",
+            name: "profilePhoto",
+            message: "Will the profile include a photo? If so, the file needs to be saved in an assets folder in your project directory before proceeding.",
+            default: false
+        },
+        {
+            when: function (response) {
+                return response.profilePhoto;
+        },
+            type: "text",
+            name: "photoName",
+            message: "Please provide the name, including the extension, of the file:",
+        }
+        
+
+        ])
+        .then(({name, id, email, photoName, position,}) => {
+            if (position === "Manager") {
                 return inquirer
                     .prompt([{
                         type: "text",
@@ -50,13 +67,13 @@ function Questionaire() {
                         default: false
                     }])
                     .then(({officePhone, addEmployee}) => {
-                        manager.push(new Manager(name, id, email, officePhone))
-                        // console.log(employeeArray)
+                        manager.push(new Manager(name, id, email, photoName, officePhone ))
+                        console.log(employeeArray)
                         if (addEmployee) {
                             return Questionaire();
                         }
                     })
-            } else if (role === "Engineer") {
+            } else if (position === "Engineer") {
                 return inquirer
                     .prompt([{
                         type: "text",
@@ -70,13 +87,13 @@ function Questionaire() {
                         default: false
                     }])
                     .then(({github, addEmployee}) => {
-                        engineer.push(new Engineer(name, id, email, github))
-                        // console.log(employeeArr)
+                        engineer.push(new Engineer(name, id, email, photoName, github))
+                        console.log(employeeArray)
                         if (addEmployee) {
                             return Questionaire();
                         }
                     })
-            } else if (role === "Intern") {
+            } else if (position === "Intern") {
                  return inquirer
                     .prompt([{
                         type: "text",
@@ -90,8 +107,8 @@ function Questionaire() {
                         default: false
                     }])
                     .then(({school, addEmployee}) => {
-                        intern.push(new Intern(name, id, email, school))
-                        // console.log(employeeArray )
+                        intern.push(new Intern(name, id, email, photoName, school))
+                        console.log(employeeArray)
                         if (addEmployee) {
                             return Questionaire();
                         }
