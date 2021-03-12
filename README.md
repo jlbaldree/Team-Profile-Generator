@@ -25,6 +25,8 @@ To install this application, A `.gitignore` file containing `node_modules/` and 
     
 First run node index.js in the terminal. Select the type of employee to be entered and follow the prompts to enter the applicable information. Any profile photos will need to be saved in the images folder under assets. If additional employees should be entered, select 'Y' when asked and continue following the prompts until no further employees need to be entered. Select 'N' and the application will generate the html document automatically and place it in the dist file in your directory.
     
+![nodeteam](https://user-images.githubusercontent.com/74524186/110887761-15fdc000-82a8-11eb-80ea-c1a404e51e65.gif)
+
 ## Contributing
     
 *To make contributions to the app, please reach out to the following admin(s) for approval:*
