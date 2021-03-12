@@ -3,16 +3,16 @@ const generateCards = teamData => {
     const manager = teamData.manager.map(function(position) {
         let managerHTML = `
         <div class="col-md-6 col-lg-4">
-            <div class="card">
-                <div class="card-header">
-                    <img src="assets/images/${position.photoName}" alt="Profile photo" style="width:100%">
+            <div class="card" float:"Center">
+                <div class="card-header bg-dark text-white" style="padding:1.25rem 1.25rem;">
+                    <img src="assets/images/${position.photoName}" alt="Profile photo" style="height:308px; width:auto"><br><br>
                     <h2>${position.name}</h2>
-                    <h3><i class="fas fa-bullhorn"></i> Manager</h3>
+                    <h3>Manager</h3>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${position.id}</li>
                     <li class="list-group-item">Email: <a href="mailto:${position.email}">${position.email}</a></li>
-                    <li class="list-group-item">Office Number: <a href="tel:${position.officePhone}">${position.officePhone}</a></li>
+                    <li class="list-group-item">Office Number: <a href="tel:${position.officeNumber}">${position.officeNumber}</a></li>
                 </ul>
             </div>
         </div>
@@ -24,10 +24,10 @@ const generateCards = teamData => {
         let engineerHTML = `
         <div class="col-md-6 col-lg-4">
             <div class="card">
-                <div class="card-header">
-                    <img src="assets/images/${position.photoName}" alt="Profile photo" style="width:100%">
+                <div class="card-header bg-dark text-white" style="padding:1.25rem 1.25rem;">
+                    <img src="assets/images/${position.photoName}" alt="Profile photo" style="height:308px; width:auto"><br><br>
                     <h2>${position.name}</h2>
-                    <h3><i class="fas fa-tools"></i> Engineer</h3>
+                    <h3>Engineer</h3>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${position.id}</li>
@@ -44,24 +44,24 @@ const generateCards = teamData => {
         let internHTML = `
         <div class="col-md-6 col-lg-4">
             <div class="card">
-                <div class="card-header">
-                    <img src="assets/images/${position.photoName}" alt="Profile photo" style="width:100%">
+                <div class="card-header bg-dark text-white" style="padding:1.25rem 1.25rem;">
+                    <img src="assets/images/${position.photoName}" alt="Profile photo" style="height:308px; width:auto"><br><br>
                     <h2>${position.name}</h2>
-                    <h3><i class="fas fa-garduation-cap"></i>Intern</h3>
+                    <h3>Intern</h3>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${position.id}</li>
                     <li class="list-group-item">Email: <a href="mailto:${position.email}">${position.email}</a></li>
-                    <li class="list-group-item">School: ${position.school}>${position.school}</a></li>
+                    <li class="list-group-item">School: ${position.school}</li>
                 </ul>   
             </div>
         </div>
         `
         return internHTML
     });
-    return [manager,engineer,intern]
+    return [manager,engineer,intern].join("")
     }
-    
+
 
 module.exports = templateData => {
     return `
@@ -71,10 +71,10 @@ module.exports = templateData => {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-            <title>Team Muppets</title>
+            <title>My Team</title>
         </head>
-        <body>
-            <div class="jumbotron text-center">
+        <body style="background-color: rgb(169, 169, 180);">
+            <div class="jumbotron bg-dark text-white text-center">
                 <h1>My Team</h1>
             </div>
             <div class="container">
