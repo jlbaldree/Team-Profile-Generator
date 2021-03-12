@@ -6,6 +6,8 @@
 
 This is a Node.js command-line application that allows a user to input information for multiple employees of different types. Once the user is done entering information for the employees, an HTML webpage is generated and displays summaries for each employee.
 
+![myteam](https://user-images.githubusercontent.com/74524186/110888107-bd7af280-82a8-11eb-9750-6dc73d37bfc5.PNG)
+
 ## Table of Contents
 
 * [Instructions](#instructions)
