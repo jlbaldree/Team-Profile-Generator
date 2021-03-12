@@ -32,6 +32,12 @@ First run node index.js in the terminal. Select the type of employee to be enter
 *To make contributions to the app, please reach out to the following admin(s) for approval:*
 Jonathan Baldree
 
+## Tests
+
+Tests can be run using Jest. There are 4 test files in the tests folder for employee and then each employee type: Manager, Engineer, and Intern.
+
+![Tests](https://user-images.githubusercontent.com/74524186/110887839-434a6e00-82a8-11eb-8cae-7b6cb55d972e.gif)
+
 ## License
     
 Licensed under the ![Apache](assets/licenses/Apache.txt) License.
